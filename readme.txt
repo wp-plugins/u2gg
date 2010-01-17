@@ -18,3 +18,7 @@ Plug-in to display the date WAREKI(GENGOU).
 1. Upload `u2gg.php` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Place `<?php u2gg(); ?>` in your templates
+
+== Screenshots ==
+
+1. screen shot1
