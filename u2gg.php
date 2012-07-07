@@ -1,5 +1,4 @@
 <?php
-
 /*
 Plugin Name: u2gg
 Version: 0.1
