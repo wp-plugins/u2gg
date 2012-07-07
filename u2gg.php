@@ -1,17 +1,28 @@
 <?php
 /*
 Plugin Name: u2gg
-Version: 0.1
+Version: 0.2
 Plugin URI: http://shdb.info/
 Description: Plug-in to display the date WAREKI(GENGOU)
 Author: gosunatxrea@gmail.com
 Author URI: http://shdb.info/
 */
 
-function u2gg() {
+function u2gg($args = '') {
 	global $post;
+
+	$defaults = array (
+	'echo' => TRUE,
+	'u' => FALSE,
+	);
+	$r = wp_parse_args( $args, $defaults );
+	extract( $r, EXTR_SKIP );
 	
-	$utime = strtotime($post->post_date);
+	if($u == FALSE) {
+		$utime = strtotime($post->post_date);
+	} else {
+		$utime = strtotime($u);
+	}
 
 	if ($utime >= strtotime("1989-01-08 00:00:00")) 
 	{ 
@@ -35,7 +46,11 @@ function u2gg() {
 	}
 	else false;
 	
-	echo $gengo.$year.'年('.date("Y", $utime).') '.date("n", $utime).'月 '.date("j", $utime).'日';
-}
+	$gg = $gengo.$year.'年('.date("Y", $utime).') '.date("n", $utime).'月 '.date("j", $utime).'日'; 
 
+	if($echo == true) {
+		echo $gg;
+	}
+	else return $gg;
+}
 ?>

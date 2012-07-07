@@ -3,7 +3,7 @@ Contributors: gosunatxrea
 Tags: wareki, gengou, date
 Requires at least: 2.8.5
 Tested up to: 3.4.1
-Stable tag: 0.1
+Stable tag: 0.2
 
 Plug-in to display the date WAREKI(GENGOU).
 
